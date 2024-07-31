@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         configUI()
     }
     func configUI() {
-        vButton.layer.cornerRadius = 25
+        vButton.layer.cornerRadius = 27.5
     }
     
     @IBAction func onNextPressed(_ sender: Any) {
