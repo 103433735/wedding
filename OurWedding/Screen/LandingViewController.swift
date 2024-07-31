@@ -10,6 +10,8 @@ import UIKit
 class LandingViewController: UIViewController {
 
 
+
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var codeDressStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var ivTab: [UIImageView]!
@@ -44,6 +46,9 @@ class LandingViewController: UIViewController {
         layoutCodeDress()
         vDate.layer.cornerRadius = 40
         vPlace.layer.cornerRadius = 35
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "TableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
     }
     
     func configTabbar() {
@@ -80,9 +85,9 @@ class LandingViewController: UIViewController {
         codeDressStackView.arrangedSubviews.forEach { view in
             if view == codeDressStackView.arrangedSubviews[0] {
                 view.layer.borderWidth = 1
-                view.layer.borderColor = UIColor(red: 134, green: 141, blue: 172, alpha: 1).cgColor
+                view.layer.borderColor = UIColor(red: 134/255, green: 141/255, blue: 172/255, alpha: 1).cgColor
             }
-            view.layer.cornerRadius = 10
+            view.layer.cornerRadius = view.frame.height / 2
         }
     }
     @IBAction func firstOnPress(_ sender: Any) {
@@ -97,4 +102,16 @@ class LandingViewController: UIViewController {
     @IBAction func forthOnPress(_ sender: Any) {
         self.setIndex(index: 3)
     }
+}
+
+extension LandingViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }

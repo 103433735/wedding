@@ -24,6 +24,16 @@
 		<string>Montserrat-SemiBoldItalic.ttf</string>
 		<string>Montserrat-Thin.ttf</string>
 		<string>Montserrat-ThinItalic.ttf</string>
+		<string>BeautiqueDisplay-Black.otf</string>
+		<string>BeautiqueDisplay-BlackItalic.tf</string>
+		<string>BeautiqueDisplay-Bold.otf</string>
+		<string>BeautiqueDisplay-BoldItalic.otf</string>
+		<string>BeautiqueDisplay-Italic.otf</string>
+		<string>BeautiqueDisplay-Light.otf</string>
+		<string>BeautiqueDisplay-LightItalic.otf</string>
+		<string>BeautiqueDisplay-Medium.otf</string>
+		<string>BeautiqueDisplay-MediumItalic.otf</string>
+		<string>BeautiqueDisplay-Regular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
