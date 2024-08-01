@@ -25,6 +25,7 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var vDate: UIView!
     @IBOutlet weak var vPlace: UIView!
     
+    var dataSource = LandingDataSource()
     override func viewWillAppear(_ animated: Bool) {
         self.setIndex(index: 0)
         configTabbar()
@@ -105,12 +106,27 @@ class LandingViewController: UIViewController {
 }
 
 extension LandingViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return dataSource.eventArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        if indexPath.row % 2 == 0 {
+            cell.bindingData(position: .right,
+                             time: dataSource.timeArray[indexPath.row],
+                             event: dataSource.eventArray[indexPath.row],
+                             image: dataSource.imageArray[indexPath.row])
+        } else {
+            cell.bindingData(position: .left,
+                             time: dataSource.timeArray[indexPath.row],
+                             event: dataSource.eventArray[indexPath.row],
+                             image: dataSource.imageArray[indexPath.row])
+        }
+        return cell
     }
     
     
